@@ -316,4 +316,6 @@ async def startup():
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8080)
+    from pprint import pprint
+    pprint(os.environ)
+    uvicorn.run(app, host="0.0.0.0", port=os.getenv("PORT", "8080"))
